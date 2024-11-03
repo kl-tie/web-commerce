@@ -18,6 +18,12 @@ We will disclose the following EF Core features in this repo:
 - Global Query Filter
 - Interceptors
 
+## Database Migrations
+To apply the database migrations to your DB instance, configure the connection string in `appsettings.json` (using user secrets is preferable) to your database instance (no need to create the database first), and then run:
+```bash
+dotnet dotnet-ef database update --context CommerceDbContext
+```
+
 ## Installation
 To get started with the project, follow these steps:
 1. **Clone the repository:**
