@@ -30,6 +30,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<CommerceDbContext>();
+    db.Database.Migrate();
 }
 
 app.MapGroup("/v1/users")
